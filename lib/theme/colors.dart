@@ -7,10 +7,11 @@ class TColor {
   static Color get secondaryColor1 => const Color(0XffC58BF2);
   static Color get secondaryColor2 => const Color(0XffEEA4CE);
 
-  static List<Color> get primaryG => [primaryColor1, primaryColor2];
+  static List<Color> get primaryG => [primaryColor2, primaryColor1];
   static List<Color> get secondaryG => [secondaryColor1, secondaryColor2];
 
   static Color get black => const Color(0Xff1D1617);
   static Color get gray => const Color(0Xff786F72);
   static Color get white => Colors.white;
+  static Color get lightGray => const Color(0XffF7F8F8);
 }

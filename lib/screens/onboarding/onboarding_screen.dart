@@ -1,3 +1,4 @@
+import 'package:fitness/screens/login/signup.dart';
 import 'package:fitness/screens/onboarding/onboarding_page.dart';
 import 'package:fitness/theme/colors.dart';
 import 'package:flutter/material.dart';
@@ -45,7 +46,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
 
     controller.addListener(() {
       setState(() {
-        selectedPage = controller.page?.round() ?? 1;
+        selectedPage = controller.page?.round() ?? 0;
       });
     });
   }
@@ -70,7 +71,7 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               width: 70,
               child: CircularProgressIndicator(
                 color: TColor.primaryColor1,
-                value: selectedPage / 4,
+                value: (selectedPage + 1) / 4,
                 strokeWidth: 2,
               ),
             ),
@@ -85,10 +86,15 @@ class _OnboardingScreenState extends State<OnboardingScreen> {
               child: IconButton(
                 onPressed: () {
                   if (selectedPage >= pages.length - 1) {
-                    print("asd");
+                    Navigator.push(
+                        context,
+                        MaterialPageRoute(
+                            builder: (context) => const SignupScreen()));
                   } else {
                     selectedPage = selectedPage + 1;
-                    controller.jumpToPage(selectedPage);
+                    controller.animateToPage(selectedPage,
+                        duration: const Duration(milliseconds: 600),
+                        curve: Curves.easeInBack);
                   }
                 },
                 icon: Icon(

@@ -1,4 +1,4 @@
-import 'package:fitness/screens/onboarding/onboarding_screen.dart';
+import 'package:fitness/screens/start/started_screen.dart';
 import 'package:fitness/theme/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -19,7 +19,7 @@ class MyApp extends StatelessWidget {
         primaryColor: TColor.primaryColor1,
         fontFamily: "Poppins",
       ),
-      home: const OnboardingScreen(),
+      home: const GetStartedScreen(),
     );
   }
 }
