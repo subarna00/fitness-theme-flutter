@@ -1,20 +1,20 @@
-import 'package:fitness/common/widgets/round_inputfield.dart';
-import 'package:fitness/common/widgets/rounded_blend_button.dart';
-import 'package:fitness/screens/signin/sign_in_screen.dart';
-import 'package:fitness/screens/signup/completeProfile/complete_profile_screen.dart';
+import 'package:fitness/screens/signup/signup.dart';
 import 'package:fitness/theme/colors.dart';
 import 'package:flutter/material.dart';
 
-class SignupScreen extends StatefulWidget {
-  const SignupScreen({super.key});
+import '../../common/widgets/round_inputfield.dart';
+import '../../common/widgets/rounded_blend_button.dart';
+
+class SignInScreen extends StatefulWidget {
+  const SignInScreen({super.key});
 
   @override
-  State<SignupScreen> createState() => _SignupScreenState();
+  State<SignInScreen> createState() => _SignInScreenState();
 }
 
-class _SignupScreenState extends State<SignupScreen> {
-  bool isChecked = false;
+class _SignInScreenState extends State<SignInScreen> {
   bool passwordVisible = false;
+  bool isChecked = false;
 
   @override
   Widget build(BuildContext context) {
@@ -35,7 +35,7 @@ class _SignupScreenState extends State<SignupScreen> {
               style: TextStyle(color: TColor.gray, fontSize: 16),
             ),
             Text(
-              "Create Account",
+              "Welcome Back",
               style: TextStyle(
                   color: TColor.black,
                   fontSize: 20,
@@ -43,15 +43,6 @@ class _SignupScreenState extends State<SignupScreen> {
             ),
             SizedBox(
               height: media.width * 0.05,
-            ),
-            const RoundTextInputField(
-              hintText: "First Name",
-              icon: "assets/images/Profile.png",
-            ),
-            RoundTextInputField(
-              hintText: "Last Name",
-              icon: "assets/images/Profile.png",
-              margin: EdgeInsets.only(top: media.width * 0.04),
             ),
             RoundTextInputField(
               hintText: "Email",
@@ -76,41 +67,22 @@ class _SignupScreenState extends State<SignupScreen> {
                 ),
               ),
             ),
-            SizedBox(
-              height: media.width * 0.04,
-            ),
-            Row(
-              crossAxisAlignment: CrossAxisAlignment.end,
-              children: [
-                IconButton(
-                  onPressed: () {
-                    setState(() {
-                      isChecked = !isChecked;
-                    });
-                  },
-                  icon: Icon(isChecked
-                      ? Icons.check_box
-                      : Icons.check_box_outline_blank_outlined),
-                  color: TColor.gray,
-                ),
-                Expanded(
-                    child: Text(
-                  "By continuing you accept our Privacy  Policy and \n terms of use.",
-                  style: TextStyle(fontSize: 12, color: TColor.gray),
-                ))
-              ],
-            ),
-            SizedBox(
-              height: media.width * 0.39,
-            ),
+            TextButton(
+                onPressed: () {},
+                child: Text(
+                  "Forgot your Password?",
+                  style: TextStyle(
+                      color: TColor.gray, decoration: TextDecoration.underline),
+                )),
+            const Spacer(),
             RoundedBlendButton(
-                title: "Sign Up",
+                title: "Sign In",
                 onPressed: () {
-                  Navigator.push(
-                      context,
-                      MaterialPageRoute(
-                          builder: (context) =>
-                              const CompeleteProfileScreen()));
+                  // Navigator.push(
+                  //     context,
+                  //     MaterialPageRoute(
+                  //         builder: (context) =>
+                  //             const CompeleteProfileScreen()));
                 }),
             SizedBox(
               height: media.width * 0.05,
@@ -191,28 +163,25 @@ class _SignupScreenState extends State<SignupScreen> {
                 )
               ],
             ),
-            SizedBox(
-              height: media.width * 0.04,
-            ),
             TextButton(
                 onPressed: () {
                   Navigator.push(
                       context,
                       MaterialPageRoute(
-                          builder: (context) => const SignInScreen()));
+                          builder: (context) => const SignupScreen()));
                 },
                 child: Row(
                   mainAxisSize: MainAxisSize.min,
                   children: [
                     Text(
-                      "Already have an account? ",
+                      "Don't have an account yet? ",
                       style: TextStyle(
                           color: TColor.black,
                           fontSize: 14,
                           fontWeight: FontWeight.w700),
                     ),
                     Text(
-                      "Login",
+                      "Register",
                       style: TextStyle(
                           color: TColor.primaryColor1,
                           fontSize: 14,

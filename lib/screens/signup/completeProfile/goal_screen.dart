@@ -1,6 +1,7 @@
 import 'package:carousel_slider/carousel_controller.dart';
 import 'package:carousel_slider/carousel_slider.dart';
 import 'package:fitness/common/widgets/rounded_blend_button.dart';
+import 'package:fitness/screens/signup/completeProfile/welcome_screen.dart';
 import 'package:fitness/theme/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -110,7 +111,14 @@ class _GoalScreenState extends State<GoalScreen> {
                 SizedBox(
                   height: media.width * 0.05,
                 ),
-                RoundedBlendButton(title: "Confirm", onPressed: () {})
+                RoundedBlendButton(
+                    title: "Confirm",
+                    onPressed: () {
+                      Navigator.push(
+                          context,
+                          MaterialPageRoute(
+                              builder: (context) => const WelcomeScreen()));
+                    })
               ],
             ),
           )
