@@ -1,5 +1,6 @@
 import 'package:fitness/common/widgets/round_inputfield.dart';
 import 'package:fitness/common/widgets/rounded_blend_button.dart';
+import 'package:fitness/screens/signup/completeProfile/complete_profile_screen.dart';
 import 'package:fitness/theme/colors.dart';
 import 'package:flutter/material.dart';
 
@@ -101,7 +102,15 @@ class _SignupScreenState extends State<SignupScreen> {
             SizedBox(
               height: media.width * 0.39,
             ),
-            RoundedBlendButton(title: "Sign Up", onPressed: () {}),
+            RoundedBlendButton(
+                title: "Sign Up",
+                onPressed: () {
+                  Navigator.push(
+                      context,
+                      MaterialPageRoute(
+                          builder: (context) =>
+                              const CompeleteProfileScreen()));
+                }),
             SizedBox(
               height: media.width * 0.05,
             ),

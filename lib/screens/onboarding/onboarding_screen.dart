@@ -1,4 +1,4 @@
-import 'package:fitness/screens/login/signup.dart';
+import 'package:fitness/screens/signup/signup.dart';
 import 'package:fitness/screens/onboarding/onboarding_page.dart';
 import 'package:fitness/theme/colors.dart';
 import 'package:flutter/material.dart';
